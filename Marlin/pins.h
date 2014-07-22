@@ -1,6 +1,10 @@
 #ifndef PINS_H
 #define PINS_H
 
+//Cyclone Sanguinololu pin for probing
+#define Z_PROBE_PIN 27  // using Sanguinololu, pin 36 (D27) , labeled A4
+
+
 #if MOTHERBOARD != 88
 #define X_MS1_PIN -1
 #define X_MS2_PIN -1
@@ -1162,6 +1166,7 @@
 #define HEATER_0_PIN       13 // (extruder)
 #define HEATER_1_PIN       -1
 #define HEATER_2_PIN       -1
+
 
 #ifdef SANGUINOLOLU_V_1_2
 
@@ -2782,7 +2787,7 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
     #define Z_MIN_PIN Z_STOP_PIN
     #define Z_MAX_PIN -1
   #else
-    #define Z_MIN_PIN -1
+    #define Z_MIN_PIN Z_PROBE_PIN  
     #define Z_MAX_PIN Z_STOP_PIN
   #endif
 #endif
